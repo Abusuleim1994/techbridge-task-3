@@ -1,0 +1,416 @@
+/* ==========================================================
+   TECHBRIDGE STYLES
+   Tip: change the colors in :root below when logo changes.
+   Every color on the page comes from these variables.
+   ========================================================== */
+
+   :root {
+    --primary: #12355b;      /* deep blue: header text, headings, main buttons */
+    --accent: #f5b45e;       /* warm amber: highlight buttons */
+    --bg: #ffffff;           /* page background */
+    --bg-alt: #f1f5f9;       /* alternate section background */
+    --text: #1f2937;         /* body text */
+    --muted: #5b6676;        /* softer text */
+    --dark: #0d2540;         /* footer and hero background */
+    --radius: 12px;
+  }
+  
+  /* ---------- Reset and base ---------- */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  
+  body {
+    font-family: "Plus Jakarta Sans", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  
+  img { max-width: 100%; display: block; }
+  a { color: var(--primary); }
+  
+  h1, h2, h3 { color: var(--primary); line-height: 1.2; }
+  h1 { font-size: 3rem; font-weight: 800; }
+  h2 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; }
+  h3 { font-size: 1.25rem; margin: 20px 0 8px; }
+  p  { margin-bottom: 14px; max-width: 65ch; }
+  
+  /* ---------- Layout helpers ---------- */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .narrow    { max-width: 760px; }
+  .section   { padding: 80px 0; }
+  .section-alt { background: var(--bg-alt); }
+  
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: #0d2540; }
+  .btn-accent  { background: var(--accent); color: #1f2937; }
+  .btn-accent:hover { background: #e39a2e; }
+  .btn-outline { border-color: #fff; color: #fff; }
+  .btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
+  
+  /* Visible keyboard focus (accessibility) */
+  a:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .logo { height: 44px; width: auto; }
+  
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--primary); text-decoration: underline; }
+  
+  /* ---------- Hero ---------- */
+  .hero {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    padding: 110px 0;
+  }
+  .hero h1 { color: #fff; max-width: 16ch; margin-bottom: 20px; }
+  .lead { color: #dbe6f3; font-size: 1.2rem; max-width: 55ch; margin-bottom: 30px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  
+  /* ---------- Program cards (CSS Grid) ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .card {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--radius);
+    border-top: 5px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(18, 53, 91, 0.1);
+  }
+  .card h3 { margin-top: 0; }
+  
+  /* ---------- Internship ---------- */
+  .benefits { list-style: none; display: grid; gap: 14px; max-width: 700px; }
+  .benefits li {
+    background: var(--bg-alt);
+    padding: 16px 20px;
+    border-left: 5px solid var(--primary);
+    border-radius: 8px;
+  }
+  
+  /* ---------- How to apply ---------- */
+  .steps { margin: 0 0 28px 22px; }
+  .steps li { margin-bottom: 10px; padding-left: 6px; }
+  
+  /* ---------- Community ---------- */
+  .community { background: var(--dark); }
+  .community h2, .community p { color: #fff; }
+  
+  /* ---------- Footer ---------- */
+  .site-footer { background: var(--dark); color: #cbd5e1; padding-top: 40px; }
+  .site-footer a { color: #fff; }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .copyright {
+    text-align: center;
+    padding: 24px 20px;
+    margin: 30px 0 0;
+    max-width: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+  }
+  
+  /* ==========================================================
+     RESPONSIVE: tablet
+     ========================================================== */
+  @media (max-width: 900px) {
+    h1 { font-size: 2.4rem; }
+    .nav-links { gap: 14px; font-size: 0.95rem; }
+    .section { padding: 60px 0; }
+  }
+  
+  /* ==========================================================
+     RESPONSIVE: mobile
+     Menu links are hidden to keep the header clean.
+     Logo + Apply button stay visible.
+     ========================================================== */
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    .hero { padding: 70px 0; }
+    .cards { grid-template-columns: 1fr; }   /* stack cards */
+    .hero-actions .btn { width: 100%; text-align: center; }
+  }
+  
+  /* Respect users who turn off motion */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+
+  /* ==========================================================
+   TASK 2 ADDITIONS: paste this at the BOTTOM of style.css
+   (below everything from Task 1). It reuses your colors.
+   ========================================================== */
+
+/* Highlights the current page in the menu */
+.nav-links a.active {
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Programs page hero is a little shorter than the homepage hero */
+.page-hero { padding: 80px 0; }
+.page-hero h1 { max-width: 20ch; }
+
+/* ---------- Program blocks ----------
+   Two columns on desktop: description left, skills right.
+   Each program gets its own accent color so they are easy to tell apart. */
+.program {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  padding-left: 28px;
+  border-left: 8px solid var(--primary);
+}
+.program-wd { border-left-color: var(--accent); }
+
+.tagline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.program-skills h3 { margin-top: 0; }
+
+/* Skill "chips" */
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.skill-list li {
+  background: #fff;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.program-wd .skill-list li { border-color: var(--accent); }
+.section-alt .skill-list li { background: #fff; }
+
+/* ---------- Comparison table ---------- */
+.table-wrap { overflow-x: auto; }   /* scrolls sideways on tiny screens only */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(18, 53, 91, 0.1);
+}
+.compare th, .compare td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e7eb;
+}
+.compare thead th { background: var(--primary); color: #fff; }
+.compare tbody th { color: var(--primary); width: 22%; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .program { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  .program { padding-left: 18px; border-left-width: 6px; }
+  .compare { min-width: 520px; }       /* keeps columns readable; table scrolls */
+  .page-hero { padding: 60px 0; }
+}
+
+/* ==========================================================
+   TASK 3 ADDITIONS: paste this at the BOTTOM of style.css
+   (below the Task 1 and Task 2 styles).
+   ========================================================== */
+
+/* ---------- Difficulty label: 4 small bars that fill up ---------- */
+.level {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.bars { display: inline-flex; gap: 3px; }
+.bars i {
+  width: 16px;
+  height: 8px;
+  border-radius: 2px;
+  background: #cbd5e1;          /* empty bar */
+}
+/* fill the first 1, 2, 3 or 4 bars depending on the level */
+.lvl-1 .bars i:nth-child(-n+1),
+.lvl-2 .bars i:nth-child(-n+2),
+.lvl-3 .bars i:nth-child(-n+3),
+.lvl-4 .bars i:nth-child(-n+4) { background: var(--primary); }
+
+.legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+}
+
+/* ---------- Day strip: shows where each task falls in 30 days ---------- */
+.glance h3 { margin-top: 56px; }
+.daybar {
+  list-style: none;
+  position: relative;
+  height: 60px;
+  margin: 36px 12px 0;          /* side margin so end dots are not cut off */
+}
+.daybar::before {               /* the track */
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 10px;
+  height: 6px;
+  border-radius: 3px;
+  background: #cbd5e1;
+}
+.daybar li {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--primary);
+  padding-top: 26px;
+}
+.daybar li::before {            /* the dot */
+  content: "";
+  position: absolute;
+  top: 5px; left: 50%;
+  width: 16px; height: 16px;
+  margin-left: -8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--primary);
+}
+.daybar li.end::before { background: #fff; }   /* day 30 = hollow dot */
+
+/* ---------- Vertical timeline ---------- */
+.timeline { list-style: none; margin-top: 36px; }
+.t-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.t-item::before {               /* line connecting one day badge to the next */
+  content: "";
+  position: absolute;
+  left: 30px; top: 32px; bottom: -28px;
+  width: 3px;
+  background: #cbd5e1;
+}
+.t-item:last-child::before { display: none; }
+
+.t-day {
+  position: relative;
+  z-index: 1;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  box-shadow: 0 0 0 5px var(--bg);
+}
+.t-day span { font-size: 0.7rem; }
+.t-day strong { font-size: 1.35rem; }
+
+.t-card {
+  background: #fff;
+  padding: 24px 26px;
+  border-radius: var(--radius);
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 4px 16px rgba(18, 53, 91, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.t-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(18, 53, 91, 0.16); }
+.t-num { font-weight: 700; color: var(--muted); margin-bottom: 2px; }
+.t-card h3 { margin: 0 0 10px; }
+.t-card .level { margin-bottom: 12px; }
+
+/* Expandable details (works with no JavaScript) */
+.t-card details { margin-top: 14px; border-top: 1px solid #e5e7eb; padding-top: 12px; }
+.t-card summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary);
+}
+.t-card summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.t-card details p { margin: 10px 0 0; font-size: 0.95rem; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .t-item { grid-template-columns: 48px 1fr; gap: 14px; }
+  .t-item::before { left: 22px; top: 24px; }
+  .t-day { width: 48px; height: 48px; box-shadow: 0 0 0 4px var(--bg); }
+  .t-day span { font-size: 0.6rem; }
+  .t-day strong { font-size: 1.05rem; }
+  .t-card { padding: 18px; }
+  .daybar { margin-left: 8px; margin-right: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-card { transition: none; }
+  .t-card:hover { transform: none; }
+}
+
+  
